@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<!--
+    만약 로그인이 되어있는 상태라면? 
+        => 로그아웃, 회원전체검색, 특정회원검색, 회원탈퇴
+        => xx님 환영합니다!
+
+    만약에 로그인이 안되어있는 상태라면? 
+        => 회원가입, 로그인
+        => 로그인을 해주세요.
+-->
+
+{% if nick == "" %}
+<p>로그인을 해주세요!</p>
+
+<div class="btn-group">
+    <a href="/join">
+        <button type="button" class="btn btn-primary">회원가입</button>
+    </a>
+    <a href="/login">
+        <button type="button" class="btn btn-primary">로그인</button>
+    </a>
+</div>
+
+{% else %}
+<p>{{nick}}님, 환영합니다😊</p>
+
+<div class="btn-group">
+    <a href="/user/logout">
+        <button type="button" class="btn btn-primary">로그아웃</button>
+    </a>
+    <a href="/user/selectAll">
+        <button type="button" class="btn btn-primary">회원 전체 검색</button>
+    </a>
+    <a href="/search">
+        <button type="button" class="btn btn-primary">특정 회원 검색</button>
+    </a>
+    <a href="/delete">
+        <button type="button" class="btn btn-primary">회원 탈퇴</button>
+    </a>
+</div>
+
+{% endif %}
+
+
+
+{% endblock %}

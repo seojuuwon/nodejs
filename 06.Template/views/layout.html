@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 공통된 layout을 작업할 때 사용되는 틀 
+        - 공통된 공간 : 마크업 언어 문법
+        - 페이지 별로 달라져야할 부분 : block으로 처리
+    -->
+    <h1>인공지능사관학교</h1>
+    <hr />
+
+    <!-- 페이지 별로 바뀌어야 할 부분 -->
+    {% block content %}
+    {% endblock %}
+
+    
+
+    <iframe style="width: 100%; height: 100%;" src="TEST_PDF.pdf"></iframe>
+
+    <object data="TEST_PDF.pdf" type="application/pdf" width="800" height="1200">
+        <p>
+            You don't have a PDF plugin, but you can
+            <a href="TEST_PDF.pdf">download the PDF file. </a>
+        </p>
+    </object>
+    <!-- <embed src="https://drive.google.com/viewerng/viewer?embedded=true&url=TEST_PDF.pdf" width="100%" height="600"> -->
+    <!-- <object data="/public/TEST_PDF.pdf" type="application/pdf" width="100%" height="600px">
+        <p>파일 미리보기가 잘 안되신다면 아래 링크를 클릭하셔서 확인하세요. <a href="abc.pdf"></a></p>
+    </object> -->
+</body>
+
+</html>
